@@ -14,7 +14,7 @@ public class Ball {
         System.out.println("Колобок ушёл от зайца");
     }
 
-    public void Song() {
+    public void song() {
         System.out.println("Я от бабушки ушёл, я от дедушки ушёл и от тебя уйду ...");
     }
 }

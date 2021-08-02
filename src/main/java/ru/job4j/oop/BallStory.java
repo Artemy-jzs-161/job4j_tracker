@@ -7,16 +7,16 @@ public class BallStory {
         Wolf grayWolf = new Wolf();
         Fox alisa = new Fox();
 
-        kolobok.Song();
+        kolobok.song();
         bugsBunny.tryEat(kolobok);
         kolobok.runAwayHare(bugsBunny);
 
-        kolobok.Song();
+        kolobok.song();
         grayWolf.tryEat(kolobok);
         kolobok.runAwayWolf(grayWolf);
 
         alisa.lieToBoll(kolobok);
-        kolobok.Song();
+        kolobok.song();
         alisa.lieToBoll(kolobok);
 
         System.out.println("End!!!");
