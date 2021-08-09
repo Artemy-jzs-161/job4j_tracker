@@ -3,7 +3,7 @@ package ru.job4j.oop;
 public class Error {
     private boolean active;
     private int status;
-    public String message;
+    private String message;
 
     public Error() {
     }
