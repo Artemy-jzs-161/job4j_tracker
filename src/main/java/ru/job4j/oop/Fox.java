@@ -5,8 +5,7 @@ public class Fox {
         System.out.println("Сьела");
     }
 
-    public void lieToBoll(Ball ball){
+    public void lieToBoll(Ball ball) {
         System.out.println("Колобок спой, мне песню");
-
     }
 }

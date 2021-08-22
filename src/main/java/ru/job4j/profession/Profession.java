@@ -6,7 +6,6 @@ public class Profession {
     private String education;
     private int birthday;
 
-
     public Profession(String name, String surname, String education, int birthday) {
         this.name = name;
         this.surname = surname;

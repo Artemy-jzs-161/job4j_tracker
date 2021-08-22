@@ -13,20 +13,23 @@ public class Library {
         books[3] = javaTheCompleteGuide;
 
         for (Book book : books) {
-            System.out.println((String.format("Название книги: %s, у нее %s страниц", book.getBookName(), book.getNumberOfPages())));
+            System.out.println((String.format("Название книги: %s, у нее %s страниц",
+                    book.getBookName(), book.getNumberOfPages())));
         }
 
         System.out.println("Replace 0 element for 3");
         books[3] = cleanCode;
         books[0] = javaTheCompleteGuide;
         for (Book book : books) {
-            System.out.println((String.format("Название книги: %s, у нее %s страниц", book.getBookName(), book.getNumberOfPages())));
+            System.out.println((String.format("Название книги: %s, у нее %s страниц",
+                    book.getBookName(), book.getNumberOfPages())));
         }
 
         System.out.println("print clean code");
         for (Book book : books) {
             if ("Clean Code".equals(book.getBookName())) {
-                System.out.println((String.format("Название книги: %s, у нее %s страниц", book.getBookName(), book.getNumberOfPages())));
+                System.out.println((String.format("Название книги: %s, у нее %s страниц",
+                        book.getBookName(), book.getNumberOfPages())));
             }
         }
     }

@@ -17,9 +17,5 @@ public class Jukebox {
         jukebox.music(1);
         jukebox.music(2);
         jukebox.music(3);
-
-
     }
-
-
 }
