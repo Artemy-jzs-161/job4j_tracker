@@ -66,7 +66,6 @@ public class Tracker {
             size--;
         }
         return true;
-
     }
 }
 
