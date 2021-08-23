@@ -23,12 +23,11 @@ public class Item {
 
     @Override
     public String toString() {
-        String s = "Item{"
+        return "Item{"
                 + "id=" + id
                 + ", name='" + name + '\''
                 + ", created=" + created
                 + '}';
-        return s;
     }
 
     @Override
