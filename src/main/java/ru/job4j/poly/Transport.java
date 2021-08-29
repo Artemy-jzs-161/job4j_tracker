@@ -3,8 +3,8 @@ package ru.job4j.poly;
 public interface Transport {
     void run();
 
-    String passengers(int numOfPass);
+    void passengers(String numOfPass);
 
-    String tankUp(int fuelQuantity);
+    int tankUp(int fuelQuantity);
 
 }
