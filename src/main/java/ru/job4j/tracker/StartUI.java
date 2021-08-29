@@ -23,41 +23,43 @@ public class StartUI {
                     for (Item item : items) {
                         System.out.println(item);
                     }
-                } else if (select == 2) {
-                    System.out.println("=== Edit item ====");
-                    System.out.print("Enter id: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Enter name: ");
-                    String name = scanner.nextLine();
-                    Item item = new Item(name);
-                    if (tracker.replace(id, item)) {
-                        System.out.println("Заявка изменена успешно.");
-                    } else {
-                        System.out.println("Ошибка замены заявки.");
-                    }
-                } else if (select == 3) {
-                    System.out.println("=== Delete item ====");
-                    System.out.print("Enter id: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    if (tracker.delete(id)) {
-                        System.out.println("Заявка удалена успешно.");
-                    } else {
-                        System.out.println("Ошибка удаления заявки.");
-                    }
-                } else if (select == 4) {
-                    System.out.println("=== Find item by id ====");
-                    System.out.print("Enter id: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    Item item = tracker.findById(id);
-                    if (item != null) {
-                        System.out.println(item);
-                    } else {
-                        System.out.println("Заявка с введенным id: " + id + " не найдена.");
-                    }
                 } else {
-                    System.out.println("Хранилище еще не содержит заявок");
+                    System.out.println("Хранилище еще не содержит заявок.");
                 }
-            } else if (select == 6) {
+            } else if (select == 2) {
+                System.out.println("=== Edit item ====");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Заявка изменена успешно.");
+                } else {
+                    System.out.println("Ошибка замены заявки.");
+                }
+            } else if (select == 3) {
+                System.out.println("=== Delete item ====");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
+                    System.out.println("Заявка удалена успешно.");
+                } else {
+                    System.out.println("Ошибка удаления заявки.");
+                }
+            } else if (select == 5) {
+            System.out.println("=== Find items by name ====");
+            System.out.print("Enter name: ");
+            String name = scanner.nextLine();
+            Item[] items = tracker.findByName(name);
+            if (items.length > 0) {
+                for (Item item : items) {
+                    System.out.println(item);
+                }
+            } else {
+                System.out.println("Заявки с именем: " + name + " не найдены.");
+            }
+        } else if (select == 6) {
                 run = false;
             }
         }
