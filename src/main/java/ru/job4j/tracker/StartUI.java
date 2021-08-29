@@ -12,7 +12,6 @@ public class StartUI {
 
     public static void deteleItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ====");
-        System.out.print("Enter id: ");
         int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
             System.out.println("Заявка удалена успешно.");
@@ -35,7 +34,7 @@ public class StartUI {
 
     public static void editItems(Input input, Tracker tracker) {
         System.out.println("=== Edit item ====");
-        int id = Integer.parseInt(input.askStr("Enter id: "));
+        int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
@@ -47,7 +46,6 @@ public class StartUI {
 
     public static void findItemsByName(Input input, Tracker tracker) {
         System.out.println("=== Find items by name ====");
-        System.out.print("Enter name: ");
         String name = input.askStr("Enter name: ");
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
@@ -59,13 +57,22 @@ public class StartUI {
         }
     }
 
+    public static void findItemById(Input input, Tracker tracker) {
+        System.out.println("=== Find item by id ====");
+        int id = input.askInt("Enter id: ");
+        Item item = tracker.findById(id);
+        if (item != null) {
+            System.out.println(item);
+        } else {
+            System.out.println("Заявка с введенным id: " + id + " не найдена.");
+        }
+    }
+
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Select: ");
-            String msg = null;
-            int select = Integer.parseInt(input.askStr(msg));
+            int select = input.askInt("Select: ");
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
@@ -74,6 +81,8 @@ public class StartUI {
                 StartUI.editItems(input, tracker);
             } else if (select == 3) {
                 StartUI.deteleItem(input, tracker);
+            } else if (select == 4) {
+              StartUI.findItemById(input, tracker);
             } else if (select == 5) {
                 StartUI.findItemsByName(input, tracker);
             } else if (select == 6) {
