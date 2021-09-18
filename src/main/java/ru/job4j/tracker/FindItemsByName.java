@@ -14,11 +14,10 @@ public class FindItemsByName implements UserAction {
         if (items.length > 0) {
             for (Item item : items) {
                 System.out.println(item);
-                return true;
             }
         } else {
             System.out.println("Заявки с именем: " + name + " не найдены.");
         }
-        return false;
+        return true;
     }
 }

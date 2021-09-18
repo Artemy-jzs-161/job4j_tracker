@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 public class EditItems implements UserAction {
     @Override
     public String name() {
-        return null;
+        return "Edit item";
     }
 
     @Override
@@ -14,10 +14,11 @@ public class EditItems implements UserAction {
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("Заявка изменена успешно.");
-            return true;
+
         } else {
             System.out.println("Ошибка замены заявки.");
-            return false;
+
         }
+        return true;
     }
 }
