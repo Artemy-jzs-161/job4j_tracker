@@ -20,13 +20,12 @@ public class ValidateInput implements Input {
         int value = -1;
         do {
             try {
-                String rsl = in.askStr(question);
+                value = in.askInt(question);
                 invalid = false;
             } catch (NumberFormatException nfe) {
                 out.println("Please enter validate data again.");
             }
-        }
-        while (invalid);
+        } while (invalid);
         return value;
     }
 }
