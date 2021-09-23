@@ -37,6 +37,7 @@ public class ValidateInputTest {
         Input in = new StubInput(
                 new String[]{"1", "3", "5"}
         );
+
         ValidateInput input = new ValidateInput(out, in);
 
         int selected = input.askInt("Enter menu:");
