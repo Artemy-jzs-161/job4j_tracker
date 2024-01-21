@@ -1,10 +1,8 @@
 package ru.job4j.tracker;
 
-import org.hamcrest.Matcher;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidateInputTest {
 
@@ -16,47 +14,37 @@ public class ValidateInputTest {
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(1));
-
+        assertThat(selected).isEqualTo(1);
     }
 
     @Test
     public void whenValidInput() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[]{"1"}
-        );
+        Input in = new StubInput(new String[]{"1"});
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(1));
+        assertThat(selected).isEqualTo(1);
     }
 
     @Test
-    public void whenMultiValidInput() {
+    public void whenMultipleValidInputs() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[]{"1", "3", "5"}
-        );
-
+        Input in = new StubInput(new String[]{"2", "5", "3"});
         ValidateInput input = new ValidateInput(out, in);
-
-        int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(1));
-
-        int selected1 = input.askInt("Enter menu:");
-        assertThat(selected1, is(3));
-
-        int selected2 = input.askInt("Enter menu:");
-        assertThat(selected2, is(5));
+        int first = input.askInt("Enter first number:");
+        int second = input.askInt("Enter second number:");
+        int third = input.askInt("Enter third number:");
+        assertThat(first).isEqualTo(2);
+        assertThat(second).isEqualTo(5);
+        assertThat(third).isEqualTo(3);
     }
 
     @Test
-    public void whenNegativeNumberInput() {
+    public void whenNegativeInput() {
         Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[]{"-1"});
+        Input in = new StubInput(new String[]{"-3"});
         ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(-1));
+        int selected = input.askInt("Enter number:");
+        assertThat(selected).isEqualTo(-3);
     }
 }
