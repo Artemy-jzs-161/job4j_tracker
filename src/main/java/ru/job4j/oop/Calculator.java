@@ -6,13 +6,12 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        int sum = sum(5);
-        int minus = minus(4);
-        int devided = calculator.devide(5);
-        int multiplied = calculator.multiply(5);
-        double sao = calculator.sumAllOperation(sum, minus, devided, multiplied);
+        System.out.println(sum(5));
+        System.out.println(minus(5));
+        System.out.println(calculator.devide(5));
+        System.out.println(calculator.multiply(5));
+        System.out.println(calculator.sumAllOperation(5));
 
-        System.out.println(sao);
     }
 
     private static int sum(int y) {
@@ -31,10 +30,10 @@ public class Calculator {
         return x * y;
     }
 
-    private double sumAllOperation(int sum,
-                                   int minus,
-                                   int devide,
-                                   int multiply) {
-        return sum + minus + devide + multiply;
+    private double sumAllOperation(int y) {
+        return sum(y)
+                + minus(y)
+                + devide(y)
+                + multiply(y);
     }
 }
