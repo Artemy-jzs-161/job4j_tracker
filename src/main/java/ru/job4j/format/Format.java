@@ -15,27 +15,27 @@ public class Format {
         specSetting(5000000.0000);
     }
 
-    // спецификатор %s выводит строковое представление аргумента
+    /** спецификатор %s выводит строковое представление аргумента */
     public static void specString(String name) {
         System.out.println(String.format("Привет! Я %s", name));
     }
 
-    // спецификатор d% мы передаёт на форматирование целое число
+    /** спецификатор d% мы передаём на форматирование целое число */
     public static void specInt(Integer age) {
         System.out.println(String.format("Мой возраст: %d", age));
     }
 
-    // %b. Любой переданный аргумент будет превращён в true. Если же передан null, то false
+    /** %b. Любой переданный аргумент будет превращён в true. Если же передан null, то false */
     public static void specBoolean(Integer i) {
         System.out.println(String.format("Аргумент передан? %b", i));
     }
 
-    // %c. Задаёт любой символ из таблицы Юникод.
+    /** %c. Задаёт любой символ из таблицы Юникод.*/
     public static void specChar(char c) {
         System.out.println(String.format("Jo%c4j", c));
     }
 
-    // %n. Задает разделитель строк.
+    /** %n. Задает разделитель строк. */
     public static void specSeparator() {
         System.out.format("Строка1%nСтрока2%n");
     }
