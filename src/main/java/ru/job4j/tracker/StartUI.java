@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
-import ru.job4j.tracker.action.FindItemById;
-import ru.job4j.tracker.action.FindItemsByName;
-import ru.job4j.tracker.action.UserAction;
+import ru.job4j.tracker.action.*;
 import ru.job4j.tracker.input.ConsoleInput;
 import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.input.ValidateInput;
@@ -45,11 +43,11 @@ public class StartUI {
         Tracker tracker = new Tracker();
         List<UserAction> actions = List.of(
                 new CreateAction(output),
-                new DeleteItem(output),
-                new EditItems(output),
-                new FindItemById(output),
-                new FindItemsByName(output),
-                new ShowAllItems(output),
+                new DeleteAction(output),
+                new ReplaceAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
+                new FindAllAction(output),
                 new Exit()
         );
         new StartUI(output).init(input, tracker, actions);
