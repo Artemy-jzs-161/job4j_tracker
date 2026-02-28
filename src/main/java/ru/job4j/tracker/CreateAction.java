@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.action.UserAction;
+import ru.job4j.tracker.input.Input;
+import ru.job4j.tracker.output.Output;
 
 public class CreateAction implements UserAction {
     private final Output out;

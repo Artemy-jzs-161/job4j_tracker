@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import ru.job4j.tracker.action.UserAction;
+import ru.job4j.tracker.input.Input;
 
 public class Exit implements UserAction {
     @Override
